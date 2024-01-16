@@ -18,4 +18,19 @@
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
-#-renamesourcefileattribute SourceFile
+-renamesourcefileattribute SourceFile
+# Keep the application class
+
+#-keep public class com.example.YourApplicationClass {
+#    public static void main(java.lang.String[]);
+#}
+
+# Keep all classes that are used for entry points (e.g., activities, services, fragments)
+#-keep public class * extends android.app.Activity
+#-keep public class * extends android.app.Service
+#-keep public class * extends android.app.Fragment
+#
+## Keep the names of classes that are used in the AndroidManifest.xml
+#-keep public class * extends android.app.Application
+#-keep public class * extends android.content.BroadcastReceiver
+#-keep public class * extends android.content.ContentProvider

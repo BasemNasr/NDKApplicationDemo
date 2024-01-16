@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.bn.ndkapplication.Constants.API_KEY_NOT_SECURED
 import com.bn.ndkapplication.databinding.FragmentFirstBinding
 
 /**
@@ -43,7 +44,8 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
-        binding.textviewKey.text = keys.APIKey()
+        binding.textviewKey.text = "Secured Key : ${keys.APIKey()}"
+        binding.textviewFirst.text = "Not Secured Key : ${Constants.API_KEY_NOT_SECURED}"
     }
 
     override fun onDestroyView() {
